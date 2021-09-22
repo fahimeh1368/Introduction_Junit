@@ -12,6 +12,7 @@ public class BookBean {
 			throw new IllegalArgumentException("title must be set");
 		}
 		if (title.length() <= MIN_LENGTH) {
+			if(!title.contains("a"))
 			throw new IllegalArgumentException("title must have a minimal length of " + MIN_LENGTH);
 		}
 		return new Book(title, UUID.randomUUID().toString().toUpperCase());
