@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.isEmptyOrNullString;
 import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.notNullValue;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -20,7 +21,7 @@ public class BookBeanTest {
 	public void shouldCreateBook() throws Exception {
 		Book book = bookBean.create(TITLE);
 		assertThat(book, notNullValue());
-		assertThat(book.getTitle(), equalTo(TITLE));
+		assertEquals(book.getTitle(), TITLE);
 		assertThat(book.getId(), not(isEmptyOrNullString()));
 	}
 
